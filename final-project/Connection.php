@@ -22,6 +22,19 @@
       }
     }
 
+    // 讀取資料
+    public function getNotes()
+    {
+      // 寫原生
+      $mySqlRequest = "SELECT *  FROM note ORDER BY created_date DESC";
+      // 執行它
+      $statement = $this->pdo->prepare($mySqlRequest);
+      $statement->execute();
+
+      return $statement->fetchAll(PDO::FETCH_ASSOC);
+      // FETCH_ASSOC 回傳 array
+    }
+
   }
 
   return new Connection();

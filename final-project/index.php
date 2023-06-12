@@ -1,8 +1,12 @@
 <?php
 
-  $connection = require_once './Connection.php'
+  $connection = require_once './Connection.php';
 
+  $notes = $connection->getNotes();
 
+  // var_dump($notes);
+  // 覺得不好看可以改成 <pre>
+  // echo '<pre>', print_r($notes), '</pre>';
 ?>
 
 <!DOCTYPE html>
