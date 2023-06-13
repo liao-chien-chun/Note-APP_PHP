@@ -30,32 +30,23 @@
       </button>
     </form>
     <div class="notes">
+
+      <?php foreach($notes as $note): ?>
       <div class="note">
         <div class="title">
-          <a href="#">This is post title</a>
+          <a href="#"><?php echo $note['title']; ?></a>
         </div>
         <div class="description">
-          This is description
+          <?php echo $note['description']; ?>
         </div>
-        <small>2021-05-31</small>
+        <small><?php echo $note['created_date']; ?></small>
         <form action="delete.php" method="post">
           <input type="hidden" name="id" value="">
           <button class="close">X</button>
         </form>
       </div>
-      <div class="note">
-        <div class="title">
-          <a href="#">This is post title2</a>
-        </div>
-        <div class="description">
-          This is description
-        </div>
-        <small>2031-05-31</small>
-        <form action="delete.php" method="post">
-          <input type="hidden" name="id" value="">
-          <button class="close">X</button>
-        </form>
-      </div>
+      <?php endforeach; ?>
+
     </div>
   </div>
 
