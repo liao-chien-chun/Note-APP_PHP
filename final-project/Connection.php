@@ -35,6 +35,17 @@
       // FETCH_ASSOC 回傳 array
     }
 
+    // 新增筆記
+    public function addNote($note)
+    {
+      $mySqlRequest = "INSERT INTO note (`title`, `description`, `created_date`) VALUES(:title, :description, :date) ";
+      $statement = $this->pdo->prepare($mySqlRequest);
+      $statement->bindValue('title', $note['title']);
+      $statement->bindValue('description', $note['description']);
+      $statement->bindValue('date', date('Y-m-d H:i:s'));
+      return $statement->execute();
+    }
+
   }
 
   return new Connection();

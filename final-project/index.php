@@ -21,6 +21,7 @@
 <body>
 
   <div>
+
     <form class="new-note" action="save.php" method="post">
       <input type="hidden" name="id" value="">
       <input type="text" name="title" placeholder="Note title" autocomplete="off" value="">
@@ -29,6 +30,7 @@
         新增筆記
       </button>
     </form>
+    
     <div class="notes">
 
       <?php foreach($notes as $note): ?>
