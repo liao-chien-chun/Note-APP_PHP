@@ -46,6 +46,15 @@
       return $statement->execute();
     }
 
+    // 刪除筆記
+    public function removeNote($id)
+    {
+      // 變數前面寫一個分號
+      $sql = "DELETE FROM note WHERE `id` = :id";
+      $statement = $this->pdo->prepare($sql);
+      $statement->bindValue('id', $id);
+      return $statement->execute();
+    }
   }
 
   return new Connection();
